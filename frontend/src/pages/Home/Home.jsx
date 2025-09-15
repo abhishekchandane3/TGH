@@ -5,6 +5,7 @@ import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
 import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'
 import ProductReels from '../../components/ProductReels/ProductReels'
 import BlogSection from '../../components/Blog/BlogSection'
+import ProductSlides from '../../components/ProductsSlide/ProductSlide'
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
   return (
     <div>
       <Header/>
+      <ProductSlides/>
       <ExploreMenu  category={category} setCategory={setCategory} />
 
       <FoodDisplay category={category} />
