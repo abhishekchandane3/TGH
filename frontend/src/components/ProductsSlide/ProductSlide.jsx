@@ -3,9 +3,9 @@ import "./ProductSlide.css";
 
 const products = [
   { id: 1, name: "Veg Burger", price: "₹200.99", rating: 4, image: "/images/burger.png" },
-  { id: 2, name: "French Fries", price: "₹120.50", rating: 5, image: "/images/burger.png" },
-  { id: 3, name: "Falafel Balls", price: "₹180.75", rating: 4, image: "/images/burger.png" },
-  { id: 4, name: "Veg Platter", price: "₹250.00", rating: 5, image: "/images/burger.png" },
+  { id: 2, name: "French Fries", price: "₹120.50", rating: 5, image: "/images/combo.png" },
+  { id: 3, name: "Falafel Balls", price: "₹180.75", rating: 4, image: "/images/cutlet.png" },
+  { id: 4, name: "Veg Platter", price: "₹250.00", rating: 5, image: "/images/ff.png" },
   { id: 5, name: "Cheese Pizza", price: "₹299.00", rating: 4, image: "/images/burger.png" },
   { id: 6, name: "Pasta", price: "₹220.00", rating: 3, image: "/images/burger.png" },
   { id: 7, name: "Hot Dog", price: "₹150.99", rating: 4, image: "/images/burger.png" },
