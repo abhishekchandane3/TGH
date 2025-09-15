@@ -5,7 +5,7 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
-  const [menu, setMenu] = useState("shop");
+  const [menu, setMenu] = useState("home");
   const [showMenu, setShowMenu] = useState(false); // 👈 toggle state
 
   const {getTotalCartAmount} = useContext(StoreContext);
@@ -38,10 +38,10 @@ const Navbar = ({ setShowLogin }) => {
               <li>
                 <Link
                   to="/"
-                  onClick={() => setMenu("shop")}
-                  className={menu === "shop" ? "active" : ""}
+                  onClick={() => setMenu("home")}
+                  className={menu === "home" ? "active" : ""}
                 >
-                  Shop
+                  Home
                 </Link>
               </li>
               <li>
