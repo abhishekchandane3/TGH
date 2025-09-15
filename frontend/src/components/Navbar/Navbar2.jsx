@@ -29,12 +29,16 @@ const Navbar = ({ setShowLogin }) => {
           />
         </div>
 
+        
         {/* Center - Brand OR Menu */}
         <div className="navbar-center">
           {!showMenu ? (
             <h3 className="brand-title">The Good Habit</h3>
           ) : (
             <ul className={`navbar-menu ${showMenu ? "show" : ""}`}>
+              {/* ❌ Close Icon (Only Mobile) */}
+              <li className="close-menu" onClick={() => setShowMenu(false)}>✖</li>
+
               <li>
                 <Link
                   to="/"
@@ -74,6 +78,8 @@ const Navbar = ({ setShowLogin }) => {
             </ul>
           )}
         </div>
+
+
 
         {/* Right - Icons */}
         <div className="navbar-right">

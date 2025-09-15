@@ -97,6 +97,8 @@
   filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(15deg);
 }
 
+
+
 /* 🔹 Responsive (Tablet & Mobile) */
 @media (max-width: 768px) {
   .navbar2 {
@@ -118,11 +120,11 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background: #4b0082;
+    background: #ff3773;
     padding: 20px 0;
     gap: 20px;
-    align-items: center;
-    border-radius: 8px;
+    align-items: center; 
+    border: 1px solid rgb(255, 255, 255);
   }
 
   .navbar-right {
@@ -164,5 +166,18 @@
     border-radius: 50%;
     top: 7px;
     right: 45px;
+  }
+
+  .close-menu {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px; 
+    cursor: pointer;
+    color: #fff;
+  }
+
 }
-}
+
+
+

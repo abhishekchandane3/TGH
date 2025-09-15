@@ -200,7 +200,11 @@
 
 @media (max-width: 480px) {
   .product-card {
-    flex: 0 0 160px;
+    flex: 0 0 180px;
+  }
+
+  .slide-buttons{
+    display: none;
   }
 
   .product-img {
