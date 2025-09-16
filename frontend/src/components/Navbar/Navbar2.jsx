@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar2.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
@@ -8,7 +8,15 @@ const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
   const [showMenu, setShowMenu] = useState(false); // 👈 toggle state
 
-  const {getTotalCartAmount} = useContext(StoreContext);
+  const {getTotalCartAmount, token, setToken} = useContext(StoreContext);
+
+  const navigate = useNavigate();
+
+  const logOut = () =>{
+    localStorage.removeItem("token");
+    setToken(""); 
+    navigate("/"); 
+  }
 
   return (
     <>
@@ -84,19 +92,33 @@ const Navbar = ({ setShowLogin }) => {
         {/* Right - Icons */}
         <div className="navbar-right">
           <img src={assets.search_icon} alt="Search" className="icon" />
-          <Link to="/cart">
+          
 
            <div className="navbar-basket-icon">
             <div className={getTotalCartAmount()===0? "" : "dot"} ></div>
-            <img src={assets.basket_icon} alt="Cart" className="icon" />
+              <Link to="/cart"> 
+                <img src={assets.basket_icon} alt="Cart" className="icon" />  
+              </Link>
             </div>
-          </Link>
-          <img
-            src={assets.user_icon}
-            alt="User"
-            className="icon"
-            onClick={() => setShowLogin(true)}
-          />
+         
+          { !token?<img src={assets.user_icon}   alt="User"  className="icon"  
+                  onClick={() => setShowLogin(true)} />  
+            :<div className="nav-bar-profile">
+                  <img src={assets.profile_image} 
+                  alt="" />
+                  <ul className="nav-profile-dropdown">
+                    <li>
+                      <img src={assets.bag} />
+                      <p>Orders</p>
+                    </li>
+                    <hr/>
+                    <li onClick={logOut}> 
+                      <img src={assets.logout} /> 
+                      <p>Logout</p>  
+                    </li>
+                  </ul>
+                 </div>}
+
         </div>
       </div>
     </>

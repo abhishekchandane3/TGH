@@ -101,6 +101,75 @@
   filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(15deg);
 }
 
+/* 🔹 Profile Container */
+.nav-bar-profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-bar-profile > img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.nav-bar-profile > img:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 Dropdown */
+.nav-profile-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 160px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  list-style: none;
+  padding: 8px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  display: none; /* default hidden */
+  z-index: 200;
+}
+
+/* Show dropdown on hover */
+.nav-bar-profile:hover .nav-profile-dropdown {
+  display: block;
+}
+
+/* Dropdown items */
+.nav-profile-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-profile-dropdown li img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.nav-profile-dropdown li:hover {
+  background: #f6f6f6;
+  color: #ff3773; /* brand color */
+}
+
+.nav-profile-dropdown hr {
+  margin: 6px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
 
 
 /* 🔹 Responsive (Tablet & Mobile) */
