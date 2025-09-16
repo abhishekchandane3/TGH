@@ -5,12 +5,27 @@ import { food_list } from "../assets/assets";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-
   const [cartItems, setCartItems] = useState({});
+  const [token, setToken] = useState(""); // 🟢 token state
 
   const url = "http://localhost:4000";
 
-  const [token,setToken] = useState("");
+  // 🔹 Load token from localStorage when app starts
+  useEffect(() => {
+    const savedToken = localStorage.getItem("token");
+    if (savedToken) {
+      setToken(savedToken);
+    }
+  }, []);
+
+  // 🔹 Save token to localStorage whenever it changes
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem("token", token);
+    } else {
+      localStorage.removeItem("token");
+    }
+  }, [token]);
 
   const addToCart = (itemId) => {
     if (!cartItems[itemId]) {
@@ -18,7 +33,7 @@ const StoreContextProvider = (props) => {
     } else {
       setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     }
-  }
+  };
 
   const removeFromCart = (itemId) => {
     if (cartItems[itemId]) {
@@ -29,22 +44,18 @@ const StoreContextProvider = (props) => {
         setCartItems(updatedCart);
       }
     }
-  }
+  };
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     for (const item in cartItems) {
-
       if (cartItems[item] > 0) {
-        // let itemInfo = food_list.find( (product) => product._id === item);
         let itemInfo = food_list.find((product) => product._id == item);
         totalAmount += itemInfo.price * cartItems[item];
       }
     }
     return totalAmount;
-  }
-
-
+  };
 
   // Context value
   const contextValue = {
@@ -56,7 +67,7 @@ const StoreContextProvider = (props) => {
     getTotalCartAmount,
     url,
     token,
-    setToken
+    setToken,
   };
 
   return (

@@ -6,6 +6,10 @@ import hamburger_icon2 from './hamburger_icon2.png';
 import search_icon from './search_icon.png';
 import basket_icon from './basket_icon.png';
 import user_icon from './user_icon.png';
+
+import orders from './orders.png'
+import logout from './logout.png';
+
 import profile_image from './profile_image.png';
 import cross_icon from './cross_icon.png';
 import add_icon_white from './add_icon_white.png';
@@ -33,6 +37,8 @@ export const assets = {
     search_icon,
     basket_icon,
     user_icon,
+    orders,  
+    logout,
     profile_image,
     cross_icon,
     add_icon_white,
