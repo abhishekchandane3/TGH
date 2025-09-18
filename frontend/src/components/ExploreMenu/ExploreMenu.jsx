@@ -25,7 +25,7 @@ const ExploreMenu = ({ category, setCategory }) => {
                     className="scroll-btn left" 
                     onClick={() => document.querySelector('.explore-menu-list').scrollBy({left: -200, behavior: 'smooth'})}
                 >
-                    &#10094;
+                   {"<"}
                 </button>
             </div>
 
@@ -55,7 +55,7 @@ const ExploreMenu = ({ category, setCategory }) => {
                     className="scroll-btn right" 
                     onClick={() => document.querySelector('.explore-menu-list').scrollBy({left: 200, behavior: 'smooth'})}
                 >
-                    &#10095;
+                    {">"}
                 </button> 
             </div>
         <hr />
