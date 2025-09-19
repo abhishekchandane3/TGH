@@ -83,8 +83,10 @@
   height: 28px;
   cursor: pointer;
   filter: brightness(0) invert(1);
-  transition: 0.3s;
+  transition: 0.3s; 
+  position: relative; /* 👈 add this so .dot aligns properly */
 }
+
 
 .navbar-basket-icon .dot{
     position: absolute;
