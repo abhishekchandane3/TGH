@@ -6,6 +6,7 @@ import { StoreContext } from '../../context/StoreContext';
 import axios from 'axios';
 
 const LoginPopup = ({setShowLogin}) => {
+    
 
     const {url, setToken} = useContext(StoreContext);
 
@@ -17,14 +18,18 @@ const LoginPopup = ({setShowLogin}) => {
         password:"",
     })
 
+
     const onChangeHandler = (event) =>{
         const name = event.target.name;
         const value = event.target.value
         setData( data=>( {...data,[name]:value } ) )
     }
 
+    const [loading, setLoading] = useState(false);
+
     const onLogin = async (event) => {
     event.preventDefault();
+    setLoading(true);
     let newUrl = url;
     if (currState === "Login") {
         newUrl += "/api/user/login";
@@ -49,12 +54,9 @@ const LoginPopup = ({setShowLogin}) => {
         console.error("Login error:", error);
         alert("Something went wrong, please try again.");
     }
+    setLoading(false);
+    
     };
-
-
-
-
-   
 
   return (
     <div className='login-popup'> 
@@ -67,10 +69,12 @@ const LoginPopup = ({setShowLogin}) => {
             <div className="login-popup-inputs">
                 {currState==="Login"? <></> : <input name='name' onChange={onChangeHandler}  value={data.name} type="text" placeholder='Your Name' required /> }
                 <input name='email' onChange={onChangeHandler} value={data.email}  type="email" placeholder='Your Email' required />
-                <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder='  Password' required />
+                <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder="Password" required />
             </div>
 
-            <button type='submit' > {currState==="Sign Up"?"Create Account":"Login"} </button>
+            <button type="submit" disabled={loading}>
+                {loading ? "Please wait..." : (currState === "Sign Up" ? "Create Account" : "Login")}
+            </button>
 
             <div className='login-popup-condition'>
                 <input type="checkbox" required />
