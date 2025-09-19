@@ -138,6 +138,10 @@
   z-index: 200;
 }
 
+.nav-profile-dropdown.show {
+  display: block;
+}
+
 /* Show dropdown on hover */
 .nav-bar-profile:hover .nav-profile-dropdown {
   display: block;
@@ -219,6 +223,7 @@
   .navbar2 {
     padding: 10px 15px;
   }
+
 
   .brand-title {
     font-size: 16px;
