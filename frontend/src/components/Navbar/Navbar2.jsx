@@ -13,7 +13,7 @@ const Navbar = ({ setShowLogin }) => {
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
 
   const navigate = useNavigate();
-
+ 
   // --------------- Extra Logic--------------
   // 👇 ref dropdown ke liye
   const dropdownRef = useRef(null);
