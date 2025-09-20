@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar2.css";
 import { assets } from "../../assets/assets";
@@ -13,31 +13,20 @@ const Navbar = ({ setShowLogin }) => {
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
 
   const navigate = useNavigate();
- 
-  // --------------- Extra Logic--------------
-  // 👇 ref dropdown ke liye
+
+  // 🔹 Dropdown ke liye ref
   const dropdownRef = useRef(null);
-  // 👇 hook use karo
   useOutsideClick(dropdownRef, () => setShowDropdown(false));
-  // --------------- Extra Logic--------------
+
+  // 🔹 Navbar menu ke liye ref
+  const menuRef = useRef(null);
+  useOutsideClick(menuRef, () => setShowMenu(false));
 
   const logOut = () => {
     localStorage.removeItem("token");
     setToken("");
     navigate("/");
   };
-
-  // 🔹 Close dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowDropdown(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   return (
     <>
@@ -63,7 +52,10 @@ const Navbar = ({ setShowLogin }) => {
           {!showMenu ? (
             <h3 className="brand-title">The Good Habit</h3>
           ) : (
-            <ul className={`navbar-menu ${showMenu ? "show" : ""}`}>
+            <ul
+              ref={menuRef} // 👈 ref added
+              className={`navbar-menu ${showMenu ? "show" : ""}`}
+            >
               {/* ❌ Close Icon (Only Mobile) */}
               <li className="close-menu" onClick={() => setShowMenu(false)}>
                 ✖
