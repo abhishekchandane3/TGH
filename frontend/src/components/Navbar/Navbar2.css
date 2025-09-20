@@ -49,6 +49,7 @@
   display: none;
   gap: 30px;
   list-style: none;
+  color: #fff;
 }
 
 .navbar-menu .close-menu{
@@ -237,7 +238,14 @@
     top: 60px;
   }
 
-    .navbar-basket-icon .dot{
+   .navbar-menu .close-menu{
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+
+  .navbar-basket-icon .dot{
     position: absolute;
     min-width: 09px;
     min-height: 09px;
