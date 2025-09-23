@@ -10,7 +10,7 @@ const StoreContextProvider = (props) => {
 
   const [food_list, setFoodList] = useState([]);
 
- const url = "http://localhost:4000";
+ const url = "https://tgh-backend.onrender.com";
 
   //  const url = "https://the-good-habit-production-backend.onrender.com";
 
