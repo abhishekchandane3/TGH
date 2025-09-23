@@ -62,5 +62,24 @@ const placeOrder = async (req, res) => {
 
 
 
+// Receiving Payment Verification From Frontend
+const verifyOrder = async (req, res) => {
+  const { orderId, success } = req.body;
+  try{
+    if(success == "true"){
+      await orderModel.findByIdAndUpdate(orderId, { status: "Confirmed" });
+      res.json({ success: true, message: "Paid" });
+    }else{
+      await orderModel.findByIdAndDelete(orderId);
+      res.json({ success: false, message: "Payment Failed" });
+    }
+  }catch(error){
+    console.log(error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+}
 
-export { placeOrder };
+
+
+
+export { placeOrder, verifyOrder };
