@@ -1,5 +1,5 @@
 import  React,{ useContext} from 'react'
-import "./Verify.css";   
+import "./verify.css";   
 import { useSearchParams } from 'react-router-dom';
 
 import { StoreContext } from '../../context/StoreContext';
