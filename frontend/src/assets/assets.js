@@ -7,7 +7,13 @@ import search_icon from './search_icon.png';
 import basket_icon from './basket_icon.png';
 import user_icon from './user_icon.png';
 
+import delete_icon from './delete_icon.png';
+
 import orders from './orders.png'
+
+import order_1 from './order_1.png'
+import order_2 from './order_2.png'
+
 import logout from './logout.png';
 
 import profile_image from './profile_image.png';
@@ -46,7 +52,10 @@ export const assets = {
     search_icon,
     basket_icon,
     user_icon,
+    delete_icon,
     orders,  
+    order_1,
+    order_2,
     logout,
     profile_image,
     cross_icon,
