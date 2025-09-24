@@ -131,7 +131,7 @@ const Navbar = ({ setShowLogin }) => {
                   showDropdown ? "show" : ""
                 }`}
               >
-                <li>
+                <li onClick={() => {setShowDropdown(false); navigate("/myorders")}}>
                   <img src={assets.orders} alt="orders" />
                   <p>Orders</p>
                 </li>
