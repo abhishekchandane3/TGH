@@ -1,26 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import "./ProductSlide.css";
-
-const products = [
-  { id: 1, name: "Veg Burger", price: "₹200.99", rating: 4, image: "/images/burger.png" },
-  { id: 2, name: "French Fries", price: "₹120.50", rating: 5, image: "/images/combo.png" },
-  { id: 3, name: "Falafel Balls", price: "₹180.75", rating: 4, image: "/images/cutlet.png" },
-  { id: 4, name: "Veg Platter", price: "₹250.00", rating: 5, image: "/images/ff.png" },
-  { id: 5, name: "Cheese Pizza", price: "₹299.00", rating: 4, image: "/images/burger.png" },
-  { id: 6, name: "Pasta", price: "₹220.00", rating: 3, image: "/images/burger.png" },
-  { id: 7, name: "Hot Dog", price: "₹150.99", rating: 4, image: "/images/burger.png" },
-  { id: 8, name: "Chicken Burger", price: "₹280.50", rating: 5, image: "/images/burger.png" },
-  { id: 9, name: "Sandwich", price: "₹140.00", rating: 3, image: "/images/burger.png" },
-  { id: 10, name: "Momos", price: "₹110.00", rating: 4, image: "/images/burger.png" },
-  { id: 11, name: "Tacos", price: "₹230.00", rating: 5, image: "/images/burger.png" },
-  { id: 12, name: "Biryani", price: "₹320.00", rating: 5, image: "/images/burger.png" },
-  { id: 13, name: "Paneer Roll", price: "₹180.00", rating: 4, image: "/images/burger.png" },
-  { id: 14, name: "Idli Sambar", price: "₹90.00", rating: 4, image: "/images/burger.png" },
-  { id: 15, name: "Dosa", price: "₹120.00", rating: 5, image: "/images/burger.png" },
-];
+import { StoreContext } from "../../context/StoreContext";
 
 const ProductSlides = () => {
   const sliderRef = useRef(null);
+  const { food_list, cartItems, addToCart, removeFromCart, url } = useContext(StoreContext);
 
   const slideLeft = () => {
     sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
@@ -42,34 +26,60 @@ const ProductSlides = () => {
 
       {/* Product Row */}
       <div className="product-container" ref={sliderRef}>
-        {products.map((product) => (
-        <div className="product-card">
-        {/* Product Image Section */}
-        <div className="product-img-wrapper">
-            <img src={product.image} alt={product.name} className="product-img" />
-            <div className="product-overlay">
-            <button className="overlay-btn">❤️</button>
-            <button className="overlay-btn">👁</button>
+        {food_list.length > 0 ? (
+          food_list.slice(0, 15).map((product) => (
+            <div className="product-card" key={product._id}>
+              {/* Product Image Section */}
+              <div className="product-img-wrapper">
+                <img
+                  src={`${url}/images/${product.image}`} 
+                  alt={product.name}
+                  className="product-img"
+                />
+              </div>
+
+              {/* Product Info Section */}
+              <div className="product-info">
+                <h3 className="product-name">{product.name}</h3>
+                <div className="product-meta">
+                  <span className="product-price">₹{product.price}</span>
+                  <span className="product-rating">
+                    {"★".repeat(product.rating || 4)}
+                    {"☆".repeat(5 - (product.rating || 4))}
+                  </span>
+                </div>
+
+                {/* Cart Counter */}
+                {!cartItems[product._id] ? (
+                  <button
+                    className="add-to-cart"
+                    onClick={() => addToCart(product._id)}
+                  >
+                    Add to Cart
+                  </button>
+                ) : (
+                  <div className="product-counter">
+                    <button
+                      className="counter-btn"
+                      onClick={() => removeFromCart(product._id)}
+                    >
+                      -
+                    </button>
+                    <p>{cartItems[product._id]}</p>
+                    <button
+                      className="counter-btn"
+                      onClick={() => addToCart(product._id)}
+                    >
+                      +
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
-        </div>
-
-        {/* Product Info Section */}
-        <div className="product-info">
-            <h3 className="product-name">{product.name}</h3>
-            <div className="product-meta">
-            <span className="product-price">₹{product.price}</span>
-            <span className="product-rating">
-                {"★".repeat(product.rating)}
-                {"☆".repeat(5 - product.rating)}
-            </span>
-            </div>
-            <p className="product-desc">Delicious & fresh {product.name}, try it now!</p>
-            <button className="add-to-cart">Add to Cart</button>
-        </div>
-        </div>
-
-
-        ))}
+          ))
+        ) : (
+          <p className="loading-text">Loading products...</p>
+        )}
       </div>
     </div>
   );
