@@ -9,7 +9,6 @@ import LoginPopup from './components/LoginPopup/LoginPopup'
 import Footer from './components/Footer/Footer'
 import Verify from './pages/Verify/verify'
 import MyOrders from './pages/MyOrders/MyOrders'
-
 const App = () => {
 
 
