@@ -1,3 +1,4 @@
+import { response } from "express";
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 
@@ -7,7 +8,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Placing User Order For Frontend
 const placeOrder = async (req, res) => {
-  const frontend_url = "https://tgh-frontend.onrender.com";
+  const frontend_url = "http://localhost:5173";
 
   try {
     const newOrder = new orderModel({
@@ -67,7 +68,7 @@ const verifyOrder = async (req, res) => {
   const { orderId, success } = req.body;
   try{
     if(success == "true"){
-      await orderModel.findByIdAndUpdate(orderId, { status: "Confirmed" });
+      await orderModel.findByIdAndUpdate(orderId, { payment:true  ,status: "Food Processing" });
       res.json({ success: true, message: "Paid" });
     }else{
       await orderModel.findByIdAndDelete(orderId);
@@ -79,7 +80,16 @@ const verifyOrder = async (req, res) => {
   }
 }
 
+// User Orders For Frontend
+const userOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find({userId: req.body.userId});
+    res.json({success:true,data:orders});
+  }catch(error){
+    console.log(error);
+    res.json({success:false, message:"error"});
+  }
+}
 
 
-
-export { placeOrder, verifyOrder };
+export { placeOrder, verifyOrder, userOrders };
