@@ -4,6 +4,7 @@ import './Cart.css'
 import { StoreContext } from '../../context/StoreContext' 
 
 import { useNavigate } from 'react-router-dom' ;
+import { assets } from '../../assets/assets';
 
 
 const Cart = () => {
@@ -36,7 +37,9 @@ const Cart = () => {
                     <p> ₹ {item.price}</p>
                     <p> { cartItems[item._id] }</p>
                     <p> ₹ { item.price * cartItems[item._id]   }</p>
-                    <p onClick={()=>{removeFromCart(item._id)}} className='cross'> X</p>
+                    <p onClick={()=>{removeFromCart(item._id)}} className='cross'> 
+                      <img className='cart-delete-icon-img' src={assets.delete_icon} alt="" />
+                    </p>
                 </div>
                 <hr/>
               </div>
@@ -55,8 +58,8 @@ const Cart = () => {
                 </div>
                 <hr />
                 <div className='cart-total-details' >
-                  <p>D Fee</p>
-                  <p> {getTotalCartAmount() == 0 ? 0 : 2} </p>
+                  <p>  Delivery Fee</p>
+                  <p> {getTotalCartAmount() == 0 ? 0 : 20} </p>
                 </div>
                 <hr />
                 <div className='cart-total-details' >
