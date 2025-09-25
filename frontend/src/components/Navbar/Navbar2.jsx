@@ -40,7 +40,7 @@ const Navbar = ({ setShowLogin }) => {
         {/* Left - Hamburger */}
         <div className="navbar-left">
           <img
-            src={assets.hamburger_icon2}
+            src={assets.logo}
             alt="Menu"
             className="logo"
             onClick={() => setShowMenu(!showMenu)} // toggle open/close
@@ -105,13 +105,6 @@ const Navbar = ({ setShowLogin }) => {
         <div className="navbar-right">
           <img src={assets.search_icon} alt="Search" className="icon" />
 
-          <div className="navbar-basket-icon">
-            <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
-            <Link to="/cart">
-              <img src={assets.basket_icon} alt="Cart" className="icon" />
-            </Link>
-          </div>
-
           {!token ? (
             <img
               src={assets.user_icon}
@@ -143,6 +136,14 @@ const Navbar = ({ setShowLogin }) => {
               </ul>
             </div>
           )}
+
+          <div className="navbar-basket-icon">
+            <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
+            <Link to="/cart">
+              <img src={assets.basket_icon} alt="Cart" className="icon" />
+            </Link>
+          </div>
+
         </div>
       </div>
     </>
