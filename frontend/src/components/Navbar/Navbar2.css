@@ -11,8 +11,8 @@
 
 /* 🔹 Hamburger / Logo Icon */
 .logo {
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   cursor: pointer;
   object-fit: contain;
   transition: transform 0.2s;
@@ -93,8 +93,8 @@
     min-height: 09px;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
-    top: 11px;
-    right: 100px;
+    top: 12px;
+    right: 50px;
     position: absolute;
 }
 
@@ -251,13 +251,12 @@
     min-height: 09px;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
-    top: 4px;
-    right: 50px;
+    top: 5px;
+    right: 10px;
   }
 
  
 
 }
-
 
 
