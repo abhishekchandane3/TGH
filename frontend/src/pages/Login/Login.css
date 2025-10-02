@@ -1,0 +1,114 @@
+/* ========== LOGIN PAGE CSS ========== */
+
+.login-page {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #dceaff80;
+}
+
+.login-container {
+  width: 30%;
+  min-width: 300px;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin-top: -100px;
+  color: #f74343;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 30px;
+  border-radius: 10px;
+  font-size: 14px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #f74343;
+}
+
+.login-container input {
+  padding: 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-top: -10px;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 35px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #555555;
+}
+
+.login-container button {
+  background-color: #f74343;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.login-container button:hover {
+  background-color: #d33232;
+}
+
+.login-container p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-container p a {
+  color: #2485f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-container p a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 600px) {
+  .login-container {
+    width: 90%;
+    padding: 20px;
+    font-size: 13px;
+  }
+
+  .login-container button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .eye-icon {
+    font-size: 16px;
+  }
+}

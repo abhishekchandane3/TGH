@@ -1,0 +1,151 @@
+.myorders {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.myorders h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Container grid */
+.myorders .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Order card */
+.my-orders-order {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.my-orders-order:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* Image */
+.my-orders-order img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #f9f9f9;
+  padding: 6px;
+}
+
+/* Order text */
+.my-orders-order p {
+  margin: 0;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.my-orders-order p span {
+  color: #222;
+  font-weight: 500;
+}
+
+/* --- BADGES --- */
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.status-processing {
+  background-color: rgb(249, 252, 16);
+  color: rgb(0, 0, 0) !important;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.status-out {
+  background-color: dodgerblue;
+  color: white !important;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.status-delivered {
+  background-color: rgb(20, 234, 166);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.status-cancelled {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+
+.payment-done {
+  background-color: #4caf50; /* green */
+  color: white;
+}
+
+.payment-pending {
+  background-color: #f44336; /* red */
+  color: white;
+}
+
+
+.payment-done {
+  background: #e6f7ee;
+  color: #1d874a !important;
+}
+
+/* Button */
+.my-orders-order button {
+  margin-top: auto;
+  padding: 10px 14px;
+  background: #f74343;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.my-orders-order button:hover {
+  background: #d62f2f;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .myorders {
+    padding: 20px 10px;
+  }
+  .myorders h2 {
+    font-size: 22px;
+  }
+  .my-orders-order {
+    padding: 15px;
+  }
+}

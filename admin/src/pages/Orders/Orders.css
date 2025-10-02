@@ -1,0 +1,128 @@
+/* Wrapper for order card (GRID VERSION) */
+.order-item {
+  display: grid;
+  grid-template-columns: 60px 1.5fr 1fr 1fr 0.8fr; 
+  align-items: start;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 18px;
+  margin: 20px 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 14px;
+  gap: 20px;
+}
+
+/* Image */
+.order-item img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+/* Section wrapper inside order card */
+.order-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Section labels */
+.order-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Food Items */
+.order-item-food {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Customer Name */
+.order-item-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #222;
+}
+
+/* Phone */
+.order-item-phone {
+  font-size: 13px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Address */
+.order-item-address {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Amount */
+.order-amount {
+  font-weight: 600;
+  color: #28a745;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+/* Dropdown */
+.order-status {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.order-status:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .order-item {
+    grid-template-columns: 50px 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+  }
+
+  .order-amount {
+    grid-column: 2 / span 1;
+  }
+
+  .order-status {
+    grid-column: 3 / span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-item {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    text-align: left;
+    gap: 12px;
+  }
+
+  .order-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 6px;
+  }
+
+  .order-status select {
+    width: 100%;
+  }
+}
