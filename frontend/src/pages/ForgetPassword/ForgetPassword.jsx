@@ -21,7 +21,7 @@ const ForgetPassword = () => {
       const res = await axios.post(`${url}/api/user/forgot-password`, { email });
 
       if (res.data.success) {
-        setMessage("✅ " + res.data.message);
+        setMessage( res.data.message);
       } else if(res.data.success === false) {
         setError(res.data.message); // backend ka error dikhayega
       }
