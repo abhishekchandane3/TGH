@@ -5,8 +5,7 @@ import "./ResetPassword.css";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
 const ResetPassword = () => {
-  var { url } = useContext(StoreContext);
-  let url = "https://tgh-backend.onrender.com";
+  var { url } = useContext(StoreContext); // context se url lo
   const { token } = useParams(); // url se token read hoga
   const navigate = useNavigate();
 
