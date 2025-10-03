@@ -20,15 +20,21 @@ const ForgetPassword = () => {
     try {
       const res = await axios.post(`${url}/api/user/forgot-password`, { email });
 
-    if (res.data.success) {
-      setMessage("✅ " + res.data.message);
-    } else {
-      setError("⚠️ " + res.data.message);
-    }
+      if (res.data.success) {
+        setMessage("✅ " + res.data.message);
+      } else {
+        setError(res.data.message); // backend ka error dikhayega
+      }
 
     } catch (err) {
-      setError("⚠️ Error sending reset link.");
+      // Yaha pe backend ke error response ko bhi handle kar
+      if (err.response && err.response.data && err.response.data.message) {
+        setError(err.response.data.message);
+      } else {
+        setError("⚠️ Error sending reset link.");
+      }
     }
+
     setLoading(false);
   };
 
