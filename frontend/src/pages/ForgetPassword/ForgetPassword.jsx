@@ -22,7 +22,7 @@ const ForgetPassword = () => {
 
       if (res.data.success) {
         setMessage("✅ " + res.data.message);
-      } else {
+      } else if(res.data.success === false) {
         setError(res.data.message); // backend ka error dikhayega
       }
 
