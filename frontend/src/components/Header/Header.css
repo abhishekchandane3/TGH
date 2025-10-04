@@ -1,120 +1,117 @@
-
-
 .header {
+  position: relative;
   width: 100%;
-  min-height: 110vh;
-  background-color: #ff3773;  
-  display: flex;
-  justify-content: center ;
-  align-items: center;
-  padding: 40px 80px;
-  box-sizing: border-box;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
- background-image:url("../../assets/food.jpeg");
+  height: 500px;
+  overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    text-align: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
-} 
-
-
-/* .header {
+.header-carousel {
+  position: relative;
   width: 100%;
-  min-height: 90vh;
-  background-color: #ff3773;  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 80px;
-  box-sizing: border-box;
-}
-
-.header-contents {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-}
-
- 
-.header-left {
-  flex: 1;
-  color: #fff;
-}
-
-.header-title {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 20px;
-}
-
-.header-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #f0f0f0;
-  line-height: 1.6;
-}
-
-.header-btn {
-  background-color: #ffd900;  
-  color: #000;
-  font-weight: 700;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: 0.3s;
-}
-
-.header-btn:hover {
-  background-color: #ffb300;
-}
-
- 
-.header-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
 }
 
 .header-image {
   width: 100%;
-  max-width: 500px;
-  border-radius: 60%;
+  height: 100%;
   object-fit: cover;
+  transition: opacity 1s ease-in-out;
 }
 
- 
+/* Overlay text */
+.header-overlay {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: #000; /* use black on bright bg */
+  max-width: 600px;
+}
+
+/* Heading text like your screenshot */
+.header-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: #00e5ff; /* cyan style */
+  font-family: "Comic Sans MS", "Poppins", sans-serif;
+  text-shadow: 2px 2px #ff007f;
+}
+
+/* Subtitle */
+.header-subtitle {
+  margin: 20px 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #000;
+  font-family: "Courier New", monospace;
+}
+
+/* CTA button */
+.header-btn {
+  background: none;
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s;
+  border: 1px solid #ffffff;
+}
+
+.header-btn:hover {
+  background: #e60073;
+  transform: scale(1.05);
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #ff007f;
+}
+
+/* 🔹 Mobile responsive */
 @media (max-width: 768px) {
-  .header-contents {
-    flex-direction: column;
-    text-align: center;
+  .header {
+    height: 350px;
   }
 
-  .header-left {
-    margin-bottom: 30px;
+  .header-overlay {
+    top: 55%;
+    left: 5%;
+    max-width: 90%;
   }
 
   .header-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px #ff007f;
   }
 
   .header-subtitle {
     font-size: 1rem;
   }
 
-  .header-image {
-    max-width: 300px;
+  .header-btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
   }
-} */
+}
