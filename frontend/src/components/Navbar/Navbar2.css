@@ -11,11 +11,18 @@
 
 /* 🔹 Hamburger / Logo Icon */
 .logo {
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   object-fit: contain;
   transition: transform 0.2s;
+}
+
+.brandLogo{
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  bottom: -10px;
 }
 
 .logo:hover {
@@ -27,7 +34,7 @@
  display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ff3773; /* clean dashboard background */
+  background: #fa3b8b; /* clean dashboard background */
   padding: 12px 4%;
   border-bottom: 1px solid #ffffff; /* subtle divider */
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -257,9 +264,21 @@
   }
 
   .navbar-right .icon {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
+
+  .search-input {
+  position: absolute;
+  top: 50px;
+  right: 5px;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  width: 200px;
+  transition: all 0.3s ease;
+}
 
 
 }
@@ -276,8 +295,8 @@
   }
 
   .logo {
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
   }
 
   .navbar-menu {

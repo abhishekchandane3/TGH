@@ -42,7 +42,7 @@ const Navbar = ({   }) => {
         {/* Left - Hamburger */}
         <div className="navbar-left">
           <img
-            src={assets.logo}
+            src={assets.hamburger_icon2}
             alt="Menu"
             className="logo"
             onClick={() => setShowMenu(!showMenu)}
@@ -50,9 +50,9 @@ const Navbar = ({   }) => {
         </div>
 
         {/* Center - Brand OR Menu */}
-        <div className="navbar-center">
+        <div  className="navbar-center">
           {!showMenu ? (
-            <h3 className="brand-title">The Good Habit</h3>
+            <img className="brandLogo" src={assets.logo} alt="brandlogo"  />
           ) : (
             <ul
               ref={menuRef}
