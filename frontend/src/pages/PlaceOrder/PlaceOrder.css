@@ -15,38 +15,38 @@
 
 .place-order-left {
   width: 100%;
-  max-width: max(30%, 500px);
+  max-width: 600px;
   flex: 1;
 }
 
 .place-order-left .title {
   font-size: 30px;
   font-weight: 600;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .place-order-left input {
-  margin-bottom: 5px;
   width: 100%;
-  padding: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
   border: 1px solid #c5c5c5;
-  border-radius: 4px;
+  border-radius: 5px;
   outline-color: tomato;
   transition: all 0.2s ease;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-.place-order-left input.input-error {
-  border-color: #ff4d4d;
-  background-color: #fff6f6;
+.place-order-left input:focus {
+  border-color: tomato;
+  box-shadow: 0 0 3px rgba(255, 99, 71, 0.3);
 }
 
-.error-message {
-  color: #ff4d4d;
-  font-size: 13px;
-  margin-bottom: 10px;
-  margin-left: 4px;
-  font-weight: 500;
-  animation: fadeIn 0.3s ease-in;
+/* Remove fixed widths — make them responsive */
+input.email,
+input.street,
+input.phone {
+  width: 100%;
 }
 
 .place-order-left .multi-fields {
@@ -54,9 +54,26 @@
   gap: 10px;
 }
 
+.place-order-left .multi-fields .input-wrapper {
+  flex: 1;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-text {
+  color: #ff4d4d;
+  font-size: 13px;
+  margin-top: 3px;
+  margin-left: 4px;
+  animation: fadeIn 0.3s ease-in;
+}
+
 .place-order-right {
   width: 100%;
-  max-width: max(40%, 500px);
+  max-width: 450px;
   flex: 1;
 }
 
@@ -96,7 +113,6 @@
   background-color: #e64343;
 }
 
-/* Fade-in animation for errors */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -109,7 +125,7 @@
 }
 
 /* ========================== */
-/* 📱 Mobile Responsive Design */
+/* 📱 Responsive Design */
 /* ========================== */
 
 /* Tablets (below 992px) */
@@ -127,10 +143,6 @@
   .place-order-left .title {
     font-size: 26px;
     text-align: center;
-  }
-
-  .cart-total {
-    margin-top: 10px;
   }
 }
 
@@ -174,7 +186,7 @@
     padding: 10px;
   }
 
-  .error-message {
+  .error-text {
     font-size: 12px;
   }
 }
