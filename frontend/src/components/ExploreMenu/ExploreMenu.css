@@ -64,7 +64,7 @@
 }
 
 .image-wrapper img {
-  width: 50px;
+   width: 150px;
   height: 90px;
   object-fit: contain; /* 🔥 keeps full image visible without cropping */
   border-radius: 8px;
