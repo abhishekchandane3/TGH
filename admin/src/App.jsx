@@ -7,9 +7,10 @@ import List from './pages/List/List.jsx'
 import Orders from './pages/Orders/Orders.jsx'
 import Inventory from './pages/Inventory/Inventory.jsx'
 import { ToastContainer } from 'react-toastify';
+import Category from './pages/Categories/Category.jsx'
  const App = () => {
 
-  const url = "https://tgh-backend.onrender.com";
+  const url = "http://localhost:4000";
 
    return (
      <div>
@@ -23,6 +24,7 @@ import { ToastContainer } from 'react-toastify';
           <Route path="/list" element={ <List url={url}/>} />
           <Route path="/orders" element={ <Orders url={url}/>} /> 
           <Route path="/inventory" element={<Inventory url={url} />} />
+          <Route path="/category" element={<Category url={url} />} /> {/* ✅ Fix */}
         </Routes>
        </div>
      </div>

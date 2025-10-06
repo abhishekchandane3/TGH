@@ -1,0 +1,202 @@
+.category-page {
+  width: 70%;
+  margin-left: max(1vw, 25px);
+  margin-top: 20px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  color: #374151;
+  font-size: 15px;
+}
+
+.category-page h2 {
+  color: #111827;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.category-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-page input,
+.category-page textarea {
+  padding: 13px 15px;
+  border: 1.6px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.category-page input:focus,
+.category-page textarea:focus {
+  border-color: #ff4d6d;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 77, 109, 0.15);
+  outline: none;
+}
+
+.category-page button {
+  background: linear-gradient(135deg, #ff4d6d, #ff2e63);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  box-shadow: 0 4px 12px rgba(255, 46, 99, 0.25);
+}
+
+.category-page button:hover {
+  background: linear-gradient(135deg, #ff2e63, #e02554);
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  background: #9ca3af;
+  box-shadow: none;
+}
+
+.category-list {
+  margin-top: 28px;
+}
+
+.preview-img, .category-thumb {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f6f6f6;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.category-item:hover {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.category-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-btn {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: #2563eb;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* ✅ Reuse Add.jsx upload style */
+.add-image-upload {
+  align-items: flex-start;
+}
+
+.add-image-upload label {
+  width: 80px;
+  height: 80px;
+  border: 2px dashed #ff4d6d;
+  border-radius: 14px;
+  background: #fff8f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-image-upload label:hover {
+  border-color: #ff2e63;
+  background: #fff1f4;
+  transform: scale(1.03);
+}
+
+.add-image-upload img {
+  width: 35px;
+  opacity: 0.55;
+  transition: all 0.3s ease;
+}
+
+.add-image-upload.has-preview img {
+  width: 150px;
+  opacity: 1;
+}
+
+.add-image-upload label:hover img {
+  opacity: 0.9;
+}
+
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+  .category-page {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .category-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .category-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .category-page button {
+    width: 100%;
+    text-align: center;
+  }
+}

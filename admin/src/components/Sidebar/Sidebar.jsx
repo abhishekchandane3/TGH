@@ -17,6 +17,12 @@ const Sidebar = () => {
           <p>List Items</p>
         </NavLink>
 
+        {/* ✅ New Categories Link */}
+        <NavLink to='/category' className='sidebar-option'>
+          <img src={assets.category_icon} alt="categories" />
+          <p>Add Category</p>
+        </NavLink>
+
         <NavLink to='/orders' className='sidebar-option'>
           <img src={assets.order_bell_icon} alt="orders" />
           <p>Orders</p>
@@ -27,6 +33,7 @@ const Sidebar = () => {
           <img src={assets.inventory_icon} alt="inventory" />
           <p>Inventory</p>
         </NavLink>
+
       </div>
     </div>
   )

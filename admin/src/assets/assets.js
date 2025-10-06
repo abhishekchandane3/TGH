@@ -8,9 +8,7 @@ import upload_area  from './upload_area.png'
 import parcel_icon  from './parcel_icon.png'
 import inventory_icon from './inventory_icon.png'
 import order_bell_icon from './order_bell_icon.png'
-
-
-export const url = "https://tgh-backend.onrender.com";
+import category_icon from './category_icon.png'
 
 export const assets = {
     logo,
@@ -20,6 +18,7 @@ export const assets = {
     upload_area,
     parcel_icon,
     inventory_icon,
-    order_bell_icon
+    order_bell_icon,
+    category_icon
 }
 

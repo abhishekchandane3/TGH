@@ -4,6 +4,7 @@ import { assets } from '../../assets/assets';
 import { useState } from 'react'; 
 import axios from "axios"
 import { toast } from 'react-toastify';
+import { useEffect } from 'react';
 
 const Add = ({url}) => {
   const [image, setImage] = useState(false);
@@ -13,6 +14,22 @@ const Add = ({url}) => {
     price : "",
     category : "Salad"
   }); 
+
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get(`${url}/api/category/list`);
+      if (response.data.success) {
+        setCategories(response.data.data);
+      }
+    } catch (error) {
+      toast.error("Error fetching categories");
+    }
+  };
+  fetchCategories();
+}, []);
 
   const onChangeHandler = (event)=>{
     const name = event.target.name;
@@ -76,19 +93,14 @@ const Add = ({url}) => {
           <div className='add-category-price flex-cole'>
             <div className='add-category'>
               <p>Product Category</p>
-              <select onChange={onChangeHandler} name="category" >
-                <option value="Pizza">Pizza</option>
-                <option value="Biryani">Biryani</option>
-                <option value="Burger">Burger</option>
-                <option value="Chicken">Chicken</option>
-                <option value="Thali">Thali</option>
-                <option value="Fride Rice">Fride Rice</option>
-                <option value="Rolls">Rolls</option>
-                <option value="Veg Meal">Veg Meal</option>
-                <option value="Cake">Cake</option>
-                <option value="Panner">Panner</option>
-                <option value="Dosa">Dosa</option>
-                
+              <select onChange={onChangeHandler} name="category" value={data.category}>
+                {categories.length > 0 ? (
+                  categories.map((cat, index) => (
+                    <option key={index} value={cat.name}>{cat.name}</option>
+                  ))
+                ) : (
+                  <option disabled>Loading...</option>
+                )}
               </select>
             </div>  
             <div className='add-price flex-col'>
