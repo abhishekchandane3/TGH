@@ -138,13 +138,13 @@
 }
 
 /* ✅ Reuse Add.jsx upload style */
-.add-image-upload {
-  align-items: flex-start;
+.add-image-upload-category {
+  align-items: flex-start; 
 }
 
-.add-image-upload label {
-  width: 80px;
-  height: 80px;
+.add-image-upload-category label {
+  width: 100px;
+  height: 100px;
   border: 2px dashed #ff4d6d;
   border-radius: 14px;
   background: #fff8f9;
@@ -155,24 +155,24 @@
   transition: all 0.3s ease;
 }
 
-.add-image-upload label:hover {
+.add-image-upload-category label:hover {
   border-color: #ff2e63;
   background: #fff1f4;
   transform: scale(1.03);
 }
 
-.add-image-upload img {
-  width: 35px;
+.add-image-upload-category img {
+  width: 50px;
   opacity: 0.55;
   transition: all 0.3s ease;
 }
 
-.add-image-upload.has-preview img {
-  width: 150px;
+.add-image-upload-category.has-preview img {
+  width: 80px;
   opacity: 1;
 }
 
-.add-image-upload label:hover img {
+.add-image-upload-category label:hover img {
   opacity: 0.9;
 }
 

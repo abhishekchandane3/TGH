@@ -104,7 +104,7 @@ const Category = ({ url }) => {
         />
 
                 {/* ✅ Styled image upload same as Add.jsx */}
-        <div className={`add-image-upload flex-col ${preview ? "has-preview" : ""}`}>
+        <div className={`add-image-upload-category flex-col ${preview ? "has-preview" : ""}`}>
           <p>Upload Category Image</p>
           <label htmlFor="catImage">
             <img src={preview ? preview : assets.upload_area} alt="Upload" />
