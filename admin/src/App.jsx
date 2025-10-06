@@ -10,7 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import Category from './pages/Categories/Category.jsx'
  const App = () => {
 
-  const url = "http://localhost:4000";
+  const url = "https://tgh-backend.onrender.com";
 
    return (
      <div>
