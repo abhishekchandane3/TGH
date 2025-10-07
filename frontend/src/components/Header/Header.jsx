@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./Header.css";
 
 // 👇 Replace with your real images
-import foodImage1 from "../../assets/food.png";
-import foodImage2 from "../../assets/food3.png";
-import foodImage3 from "../../assets/food.png";
+import foodImage1 from "../../assets/food.jpeg";
+import foodImage2 from "../../assets/food.jpeg";
+import foodImage3 from "../../assets/food.jpeg";
 import foodImage4 from "../../assets/food2.jpeg";
 
 const Header = () => {
@@ -29,7 +29,7 @@ const Header = () => {
           alt="Food Carousel"
           className="header-image"
         />
-        <div className="header-overlay">
+        {/* <div className="header-overlay">
           <h1 className="header-title">
             High  Protein  <br /> Whole Date Chocolate
           </h1>
@@ -39,7 +39,7 @@ const Header = () => {
             A small step today makes a big change tomorrow.
           </p>
           <button className="header-btn">Order Now</button>
-        </div>
+        </div> */}
 
         {/* Dots Navigation */}
         <div className="carousel-dots">
