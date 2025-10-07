@@ -71,33 +71,35 @@ const Navbar = ({   }) => {
                   Home
                 </Link>
               </li>
+
               <li>
-                <a
-                  href="#our-story"
+                <Link
+                  to="/our-story"
                   onClick={() => setMenu("ourstory")}
                   className={menu === "ourstory" ? "active" : ""}
                 >
-                  Our story
-                </a>
+                  Our Story
+                </Link>
               </li>
               <li>
-                <a
-                  href="#track-order"
+                <Link
+                  to="/track-order"
                   onClick={() => setMenu("trackorder")}
                   className={menu === "trackorder" ? "active" : ""}
                 >
-                  Track order
-                </a>
+                  Track Order
+                </Link>
               </li>
               <li>
-                <a
-                  href="#review"
+                <Link
+                  to="/review"
                   onClick={() => setMenu("review")}
                   className={menu === "review" ? "active" : ""}
                 >
                   Review
-                </a>
-              </li>
+                </Link>
+              </li> 
+
             </ul>
           )}
         </div>
@@ -178,7 +180,7 @@ const Navbar = ({   }) => {
           <div className="navbar-basket-icon">
             <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
             <Link to="/cart">
-              <img src={assets.basket_icon} alt="Cart" className="icon" />
+              <img src={assets.bag} alt="Cart" className="icon" />
             </Link>
           </div>
         </div>

@@ -1,0 +1,92 @@
+.review-container {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.review-container:hover {
+  transform: translateY(-5px);
+}
+
+.review-container h1 {
+  color: #ff4b7d;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.review-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-container input,
+.review-container textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-container input:focus,
+.review-container textarea:focus {
+  border-color: #ff4b7d;
+  box-shadow: 0 0 8px rgba(255, 75, 125, 0.3);
+}
+
+.review-container textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.review-container button {
+  background: linear-gradient(135deg, #ff4b7d, #ff7eb3);
+  border: none;
+  color: white;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.review-container button:hover {
+  background: linear-gradient(135deg, #ff3366, #ff66a1);
+  transform: scale(1.05);
+}
+
+.review-container p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 20px;
+}
+
+.review-container p span {
+  color: #ff4b7d;
+  font-weight: 600;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .review-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .review-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .review-container button {
+    font-size: 0.95rem;
+  }
+}

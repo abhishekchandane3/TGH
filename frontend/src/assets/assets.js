@@ -5,6 +5,7 @@ import hamburger_icon2 from './hamburger_icon2.png';
 
 import search_icon from './search_icon.png';
 import basket_icon from './basket_icon.png';
+import bag from './bag.png';
 import user_icon from './user_icon.png';
 
 import delete_icon from './delete_icon.png';
@@ -44,6 +45,8 @@ import bir_4 from './bir_4.jpg';
 import bir_5 from './bir_5.jpg';
 import bir_6 from './bir_6.png';
 
+import storyImage from './storyImage.jpg';
+
 
 export const assets = {
     logo,
@@ -51,6 +54,7 @@ export const assets = {
     hamburger_icon2,
     search_icon,
     basket_icon,
+    bag,
     user_icon,
     delete_icon,
     orders,  
@@ -63,7 +67,8 @@ export const assets = {
     add_icon_green,
     remove_icon_red,
     logo_,
-    pizza_
+    pizza_,
+    storyImage
 };
 
 
